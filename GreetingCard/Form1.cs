@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /// <summary>
-/// 
+/// Aries Zodiac Card by Brendon Roy
+/// Last Update September 21st 2018
 /// </summary>
 
 namespace GreetingCard
@@ -30,8 +31,6 @@ namespace GreetingCard
 
         private void Form1_Click(object sender, EventArgs e)
         {
-
-
             //Animated Bit
             Refresh();
             Graphics g = this.CreateGraphics();
