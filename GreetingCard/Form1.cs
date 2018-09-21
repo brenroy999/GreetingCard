@@ -16,9 +16,9 @@ using System.Windows.Forms;
 
 namespace GreetingCard
 {
-    public partial class Form1 : Form
+    public partial class TedCruz : Form
     {
-        public Form1()
+        public TedCruz()
         {
             InitializeComponent();
         }
@@ -30,13 +30,18 @@ namespace GreetingCard
 
         private void Form1_Click(object sender, EventArgs e)
         {
+
+
+            //Animated Bit
             Refresh();
             Graphics g = this.CreateGraphics();
             Pen starLines = new Pen(Color.AntiqueWhite);
             SolidBrush starBrush = new SolidBrush(Color.AntiqueWhite); //Brush used for Stars
             Font titleFont = new Font("Times New Roman", 18, FontStyle.Bold);
+            Font descFont = new Font("Arial", 14, FontStyle.Bold);
             SoundPlayer starSound = new SoundPlayer(Properties.Resources.song905);
             SoundPlayer lineSound = new SoundPlayer(Properties.Resources.song936);
+            SoundPlayer dingSound = new SoundPlayer(Properties.Resources.Ding_Sound_Effect);
             SoundPlayer titleSound = new SoundPlayer(Properties.Resources.gong___sound_effect);
 
 
@@ -70,11 +75,24 @@ namespace GreetingCard
 
             titleSound.Play();
             Thread.Sleep(500);
-            g.DrawString("ARIES", titleFont, starBrush, 350, 30);
-        }
+            g.DrawString("ARIES", titleFont, starBrush, 370, 30);
+
+            Thread.Sleep(3000);
+
+            dingSound.Play();
+            g.DrawString("Aries is known to be completely adventurous; " +
+                "\nthey love new things and to seek new thrills in life. " +
+                "\nThey never want to be stagnant; " +
+                "\nthey always want to be on the go.", descFont, starBrush, 10, 340);
+        } 
 
         private void Form1_Shown(object sender, EventArgs e)
         {
+            Graphics g = this.CreateGraphics();
+            SolidBrush frontBrush = new SolidBrush(Color.AntiqueWhite);
+            Font frontFont = new Font("Times New Roman", 18, FontStyle.Bold);
+            g.DrawString("ARIES", frontFont, frontBrush, 370, 80);
+            g.DrawString("By; Brendon Roy", frontFont, frontBrush, 330, 130);
 
         }
     }
